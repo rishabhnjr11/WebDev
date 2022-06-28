@@ -26,11 +26,25 @@ browserOpenPromise //fulfill
     let visitLoginPagePromise = curTab.goto("https://www.hackerrank.com/auth/login");
     return visitLoginPagePromise;
 })
-.then(funtion (data)){
+.then(function (data){
+    //lets enter the username
     console.log("hacker login page is opened now");
     let emailTypingPromise = curTab.type("#input-1",email);
+
     return emailTypingPromise;
-}
+    // return passwordTypePromise;
+})
+.then(function(){
+    //now we will enter the password
+    let passwordTypePromise= curTab.type("#input-2",pass);
+    console.log("Password has been typed");
+    return passwordTypePromise;
+})
+.then(function(){
+    // now we gonna click on the login button
+    let loginPromise = curTab.click(".ui-btn.ui-btn-large.ui-btn-primary.auth-button.ui-btn-styled");
+    return loginPromise;
+})
 .catch(function(err){
     console.log(err);
 });
