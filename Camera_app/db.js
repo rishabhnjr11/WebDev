@@ -7,7 +7,7 @@ opendRequest.addEventListener('success',()=>{
     db=openRequest.result;
 })
 openRequest.addEventListener('upgradeneeded',()=>{
-    console.log("dataBase upgraded OR dataBase intialized"̀);
+    console.log("dataBase upgraded OR dataBase intialized");
     db=openRequest.result;
 })
 openRequest.addEventListener('error',()=>{
