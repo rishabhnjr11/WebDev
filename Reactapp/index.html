@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Functional Component</title>
+</head>
+<body>
+    <div id="root">Hello</div>
+</body>
+<script type="text/babel">
+
+    //normal method JS method
+    // let ele=document.createElement("h1");
+    // ele.innerText="Hiii";
+    // let root = document.getElementById("root");
+    // console.log(ele);
+    // root.appendChild(ele);
+
+    // //react 
+    // let ele= React.createElement("h1",{
+    //     children:["Hellowdasda"]
+    // });
+    // console.log(ele);
+    // let root=document.getElementById('root');
+    // // root.appendChild(ele);
+    // ReactDOM.render(ele,root);
+
+
+    //jsx-> js+xml 
+    //babbel converts the HTML to JS
+    function Element({name="Rishabh",city="Lucknow"}){
+        return(//->jsx
+            //convert this html to JS
+            <div>
+            <h1>Hellew {name}</h1>  
+            <h1>From the city = {city} </h1>
+            </div>
+        )
+    }
+    // ReactDOM.render(<Element />, document.getElementById('root'));
+
+    // //reuse
+    // // wrap the multiple elements in div and return it because we can only return one
+    // function Main(){
+    //     return(
+    //         <div>
+    //             <Element/>
+    //             <Element/>
+    //             <Element/>
+    //             <Element/>
+    //             <Element/>
+    //             <Element/>
+    //         </div>
+    //     )
+    // }
+    // // We can also use React.Fragment for above thing
+    function Main(){
+        return(
+            <React.Fragment>
+                <Element/>
+                <Element name="Sidhu Moosewala" city="Punjab"/>
+                <Element name="Utkarsh"/>
+                <Element/>
+            </React.Fragment>
+        )
+    }
+    ReactDOM.render(<Main/>, document.getElementById('root'));
+
+</script>
+</html>
